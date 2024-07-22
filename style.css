@@ -1,0 +1,451 @@
+:root {
+    --a:0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+}
+
+body {
+    background-color: rgb(12, 12, 12);
+    overflow-x: hidden;
+}
+
+.divide {
+    background-color: rgb(53, 49, 49);
+    height: 1px;
+}
+
+.nav {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    height: 61px;
+    z-index: 10;
+}
+
+.logo {
+    padding: 10px;
+}
+
+.logo img {
+    width: 85px;
+}
+
+.searchcont {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    align-items: center;
+}
+
+.invert {
+    filter: invert();
+}
+
+.search {
+    width: 20px;
+    cursor: pointer;
+}
+
+.open {
+    background-color: white;
+    color: black;
+    padding: 8px 12px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+}
+
+.open:hover {
+    background-color: rgb(187, 183, 183);
+}
+
+.hamburger {
+    padding-right: 14px;
+    cursor: pointer;
+}
+
+.hamburger img:hover {
+    width: 40px;
+}
+
+.left {
+    position: fixed;
+    right: -100%; 
+    transition: all 0.4s;
+    top: 6px;
+    background-color: rgb(29, 29, 29);
+    width: 250px;
+    height: 655px; /* Adjust height as needed */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden; /* Prevent overflow outside */
+    border-radius: 8px;
+    border-radius: 2px solid white;
+    border: 3px solid rgb(255, 255, 255);
+}
+
+.songList {
+    height: 200px; /* Fixed height for scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 10px; /* Optional, for spacing */
+    background-color: rgb(45, 208, 119);
+    border-radius: 8px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    border: 3px solid white;
+    cursor: pointer;
+}
+
+.songList ul li {
+    font-size: 10px;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    list-style-type: none;
+    z-index: 1;
+}
+
+.songList ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+
+.temp {
+    display: flex;
+    border: 1px solid;
+    width: 130px;
+    gap: 15px;
+    position: relative;
+    top: 20px;
+    background-color: rgb(24, 23, 23);
+    border-radius: 3px;
+    padding: 10px;
+    border: 3px solid black;
+}
+
+.musicsvg {
+    width: 15px;
+    cursor: default;
+}
+
+
+.playNow:hover {
+    cursor: pointer;
+    background-color: #6a6f6e;
+    border-radius: 40px;
+    width: 30px;
+    height: 30px;
+}
+
+
+.library {
+    display: flex;
+    gap: 10px;
+    padding-top: 5px;
+    font-size: 15px;
+}
+
+.library img {
+    width: 15px;
+    padding-left: 20px;
+}
+
+.library p {
+    position: relative;
+    top: 2px;
+}
+
+.close img {
+    width: 20px;
+    position: relative;
+    left: 50px;
+    top: 1px;
+    cursor: pointer;
+}
+
+.close img:hover {
+    width: 30px;
+}
+
+.log {
+    font-weight: 680;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    top: 30px;
+    font-size: 20px;
+}
+
+.divider {
+    padding: 20px;
+    position: relative;
+    top: 10px;
+}
+
+.links {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+
+.playlistlib h3 {
+    padding-left: 20px;
+    padding-top: 15px;
+    padding-bottom: 3px;
+    font-size: 18px;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.cardcontainer {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    padding: 5px;
+}
+
+.card {
+    cursor: pointer;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 10px;
+    width: 140px; /* Adjusted width to make the cards smaller */
+    flex: 0 0 auto; /* Prevent flex items from shrinking */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white; /* Ensure text remains white */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Retain font family */
+      position: relative; /* Add this */
+      z-index: 0;
+    transition: all 0.8s;
+    user-select: none; /* Prevent text selection */
+    -webkit-tap-highlight-color: transparent; /* Remove blue highlight on tap */
+    outline: none; /* Remove outline */
+}
+
+.card:hover {
+    background-color: rgb(28, 28, 28);
+    padding: 10px;
+    opacity: 0.8;
+    border-radius: 8px;
+    cursor: pointer;
+    --a:1;
+}
+
+.card img {
+    width: 100%;
+    height: 140px; /* Adjusted height for smaller cards */
+    object-fit:fill; /* Ensure the image covers the area properly */
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.card h4 {
+    font-size: 14px; /* Adjusted font size for smaller cards */
+    font-weight: 500;
+}
+
+.card p {
+    font-size: 12px; /* Adjusted font size for smaller cards */
+    color: #aaa;
+}
+
+
+footer {
+    background-color: rgb(12, 12, 12);
+    color: white;
+    padding: 20px 40px;
+    font-family: 'Circular Spotify Text', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    margin-top: 30px;
+}
+
+.footer-section {
+    width: 20%;
+    margin-bottom: 30px;
+}
+
+.footer-section h4 {
+    font-size: 16px;
+    margin-bottom: 12px;
+    white-space: nowrap;
+}
+
+.footer-section p {
+    margin: 8px 0;
+    font-size: 15px;
+    cursor: pointer;
+    color: #aaa;
+    white-space: nowrap;
+}
+
+.footer-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-icons img {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    background-color: #e7e3e3;
+    padding: 8px;
+    border-radius: 38px;
+}
+
+.info {
+    font-size: 13px;
+    width: 170px;
+    color: white;
+}
+.playbar {
+    background-color: #40b569; /* Spotify green color */
+    position: fixed;
+    width: 240px;
+    bottom: 40px;
+    height: 70px;
+    left: 15%;
+    border-radius: 60px;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column; /* Make the playbar a column layout */
+    align-items: center;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+    gap: 10px; /* Add some space between elements */
+}
+
+.songinfo {
+    color: white;
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    white-space: nowrap;
+    max-width: 200px;
+    position: relative;
+    bottom: 5px;
+}
+
+.songbuttons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    position: relative;
+    bottom: 5px;
+}
+
+.songbuttons img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    filter: invert(1); /* Invert colors for white icons */
+}
+
+#play:hover {
+    background-color: black;
+    padding: 1px;
+    border-radius: 50px;
+}
+
+
+#prev:hover {
+    background-color: black;
+    padding: 1px;
+    border-radius: 50px;
+}
+
+
+#next:hover {
+    background-color: black;
+    padding: 1px;
+    border-radius: 50px;
+}
+
+.songtime {
+    color: white;
+    font-size: 12px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 10px;
+    position: relative;
+    bottom: 12px;
+}
+
+.seekbar {
+    width: 237px; /* Adjust width as needed */
+    height: 4px;
+    border-radius: 2px;
+    position: relative;
+    cursor: pointer;
+    order: 1; /* Ensure the seekbar is always at the bottom */
+    position: relative;
+    bottom: 20px;
+    z-index: 500;
+    border: 2px solid rgb(173, 181, 180);
+}
+
+.circle {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    background-color: rgb(6, 55, 45);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+
+.insideplay {
+    position: absolute;
+    top: 35%;
+    left: 60%;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1; /* Ensure it stays above the image */
+    width: 50px;
+    height: 50px;
+    border-radius: 40px;
+    opacity: var(--a);
+    user-select: none; /* Prevent text selection */
+    -webkit-tap-highlight-color: transparent; /* Remove blue highlight on tap */
+}
+
+.insideplay img {
+    background-color: #860ba4;
+    width: 50px;
+    height: 50px;
+    border-radius: 40px;
+}
