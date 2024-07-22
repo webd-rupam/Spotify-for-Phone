@@ -22,7 +22,7 @@ function secondsToMinutesSeconds(seconds) {
 }
 
 async function getSongs() {
-    let a = await fetch('/Projects/SpotifyCloneHtmlCssJs/songs/');
+    let a = await fetch('https://webd-rupam.github.io/Projects/SpotifyCloneHtmlCssJsPhv/songs/');
     let response = await a.text();
     console.log(response);
     let div = document.createElement("div");
@@ -35,14 +35,14 @@ async function getSongs() {
     for (let index = 0; index < as.length; index++) {
         const element = as[index];
         if (element.href.endsWith(".mp3")) {
-            songs.push(decodeURIComponent(element.href.split("/songs/")[1]));
+            songs.push(decodeURIComponent(element.href.split("https://webd-rupam.github.io/Projects/SpotifyCloneHtmlCssJsPhv/songs/")[1]));
         }
     }
     return songs;
 }
 
 async function playMusic(track, pause = false) {
-    let audioUrl = "/Projects/SpotifyCloneHtmlCssJs/songs/" + encodeURIComponent(track);
+    let audioUrl = "https://webd-rupam.github.io/Projects/SpotifyCloneHtmlCssJsPhv/songs/" + encodeURIComponent(track);
     
     // Check if track already ends with .mp3, and if not, append it
     if (!track.endsWith(".mp3")) {
